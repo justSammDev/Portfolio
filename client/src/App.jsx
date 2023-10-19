@@ -12,12 +12,12 @@ import {
 
 function App() {
   return (
-    <main className=" relative px-20 text-center">
+    <main className=" relative px-32 text-center">
       <Nav />
       <section id="home">
         <Home />
       </section>
-      <section id="about">
+      <section id="about" className="">
         <About />
       </section>
       <section id="skills">

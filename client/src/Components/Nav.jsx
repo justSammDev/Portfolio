@@ -1,7 +1,7 @@
 function Nav() {
   return (
     <nav className="relative flex justify-center items-center bg-nav-pattern bg-clip-text text-transparent">
-      <ul className=" flex flex-row items-center justify-evenly w-10/12 text-xl font-aclonica cursor-pointer leading-3">
+      <ul className=" flex flex-row items-center justify-evenly w-full text-xl font-aclonica cursor-pointer leading-3">
         <li>
           <a href="#home">Home</a>
         </li>

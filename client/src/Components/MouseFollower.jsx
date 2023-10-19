@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, forwardRef } from "react";
 
-function MouseFollower() {
+const MouseFollower = forwardRef(function MouseFollower({}, inputRef) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -16,13 +16,14 @@ function MouseFollower() {
   }, []);
   return (
     <div
-      className=" bg-fuchsia-100 border w-16 h-16 fixed select-none blur-md pointer-events-none rounded-[50%]"
+      className=" bg-fuchsia-100 border  w-16 h-16 fixed select-none pointer-events-none rounded-[50%] bg-clip-text"
       style={{
         left: mousePosition.x + "px",
         top: mousePosition.y + "px",
       }}
+      ref={inputRef}
     ></div>
   );
-}
+});
 
 export default MouseFollower;
