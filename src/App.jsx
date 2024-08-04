@@ -17,17 +17,21 @@ function App() {
       <section id="home">
         <Home />
       </section>
+      <div className=" border-b-2 border-b-gray-600 w-5/12"></div>
       <section id="about" className="">
         <About />
       </section>
-      <section id="skills">
-        <Skills />
+      <div className=" border-b-2 border-b-gray-600 w-7/12 "></div>
+      <section id="portfolio">
+        <Portfolio />
       </section>
+      <div className=" border-b-2 border-b-gray-600 w-8/12 "></div>
       <section id="services">
         <Services />
       </section>
-      <section id="portfolio">
-        <Portfolio />
+      <div className=" border-b-2 border-b-gray-600 w-8/12 "></div>
+      <section id="skills">
+        <Skills />
       </section>
       <section id="contact">
         <Contact />

@@ -9,7 +9,7 @@ function Nav() {
           <a href="#about">About</a>
         </li>
         <li>
-          <a href="#skills">Skills</a>
+          <a href="#portfolio">Portfolio</a>
         </li>
         <li className=" text-6xl font-lobster italic">
           <a href="#home">Sam Dev</a>
@@ -18,7 +18,7 @@ function Nav() {
           <a href="#services">Services</a>
         </li>
         <li>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#skills">Skills</a>
         </li>
         <li className=" flex flex-row gap-1 items-center justify-center ">
           <a href="#contact">Contact</a>
