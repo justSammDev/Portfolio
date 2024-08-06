@@ -12,9 +12,11 @@ export default {
       backgroundImage: {
         "nav-pattern": "url('./src/assets/nav-bg.jpg')",
         "hero-pattern": "url('./src/assets/hero-bg.jpg')",
+        "eye-background": "url('./src/assets/eye-bg.jpg')",
       },
       backgroundSize: {
         "400%": "400%",
+        "300%": "300%",
       },
       keyframes: {
         "bg-animation": {
