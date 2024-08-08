@@ -2,7 +2,10 @@ import Button from "../Components/Button";
 
 function About() {
   return (
-    <div className="flex flex-col relative gap-7 pb-12 pt-2">
+    <section
+      id="about"
+      className="ABOUT flex flex-col relative gap-7 pb-12 pt-2"
+    >
       <div className=" flex items-center justify-end py-6">
         <h2 className=" text-8xl font-exo  pr-5 w-fit group hover:no-underline">
           <span className=" group-hover:underline underline-offset-8 decoration-wavy">
@@ -11,7 +14,8 @@ function About() {
           <span className=" group-hover:underline underline-offset-8">me</span>
         </h2>
       </div>
-      <div className=" flex flex-row justify-center items-center pt-4">
+
+      <div className=" flex flex-col lg:flex-row justify-center items-center pt-4">
         <img
           src="/src/assets/cat.jpg"
           placeholder="Profile Img"
@@ -35,7 +39,7 @@ function About() {
           <Button Text={"Contact"} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

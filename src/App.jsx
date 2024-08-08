@@ -1,6 +1,7 @@
 import "./App.css";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
+import MouseFollower from "./Components/MouseFollower";
 import {
   Home,
   Skills,
@@ -12,30 +13,19 @@ import {
 
 function App() {
   return (
-    <main className="block">
+    <main className="relative">
       <Nav />
-      <section id="home">
-        <Home />
-      </section>
-      <section id="about" className="">
-        <About />
-      </section>
-      <div className=" border-b-2 border-b-gray-600 w-7/12 "></div>
-      <section id="portfolio">
-        <Portfolio />
-      </section>
-      <div className=" border-b-2 border-b-gray-600 w-8/12 "></div>
-      <section id="services">
-        <Services />
-      </section>
-      <div className=" border-b-2 border-b-gray-600 w-8/12 "></div>
-      <section id="skills">
-        <Skills />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
+      <Home />
+      <About />
+      <div className="SEPARATOR border-b-2 border-b-gray-600 w-8/12 "></div>
+      <Portfolio />
+      <div className="SEPARATOR border-b-2 border-b-gray-600 w-8/12 "></div>
+      <Services />
+      <div className="SEPARATOR border-b-2 border-b-gray-600 w-8/12 "></div>
+      <Skills />
+      <Contact />
       <Footer />
+      <MouseFollower />
     </main>
   );
 }
