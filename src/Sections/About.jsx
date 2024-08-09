@@ -24,11 +24,11 @@ function About() {
         <div className=" flex flex-col gap-8 justify-center items-end py-10 px-2 border-r-2 border-r-gray-500">
           <p className=" font-montserrat text-xl leading-normal text-right ">
             I'm a self-taught web developer with a passion for turning{" "}
-            <span className=" font-lobster text-2xl bg-gradient-to-r from-orange-400 via-cyan-600 to-black to-80%  bg-clip-text text-transparent bg-400% animate-bg-animation">
+            <span className=" font-lobster text-2xl bg-gradient-to-r from-orange-400 via-cyan-600 to-black to-80%  bg-clip-text text-transparent bg-400% animate-bgAnimation">
               dreams{" "}
             </span>
             into{" "}
-            <span className="  font-aclonica bg-400% bg-gradient-to-r from-black from-20% via-purple-800 to-orange-800 bg-clip-text text-transparent animate-bg-animation">
+            <span className="  font-aclonica bg-400% bg-gradient-to-r from-black from-20% via-purple-800 to-orange-800 bg-clip-text text-transparent animate-bgAnimation">
               reality
             </span>
             . I'm aware of my capabilities and am always eager to learn more. If

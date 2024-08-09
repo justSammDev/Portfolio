@@ -9,9 +9,9 @@
   background-color: black;
   scroll-behavior: smooth;
 }
-* {
+/* * {
   cursor: none;
-}
+} */
 
 @media (max-width: 1100px) {
   * {
