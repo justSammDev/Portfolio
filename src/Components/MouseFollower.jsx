@@ -9,14 +9,14 @@ const MouseFollower = forwardRef(function MouseFollower({}, inputRef) {
     const handleMouseMove = (e) => {
       const x = e.clientX;
       const y = e.clientY;
-      console.log(x, y);
-
       setMousePosition({ x: x - 27, y: y - 27 });
 
       const newElement = {
         id: Date.now(),
         x,
         y,
+        // xPercent: Math.round((x * 100) / window.innerWidth),
+        // yPercent: Math.round((y * 100) / window.innerHeight),
       };
 
       setTrailElements((prevElements) => [...prevElements, newElement]);
@@ -57,7 +57,7 @@ const MouseFollower = forwardRef(function MouseFollower({}, inputRef) {
   return (
     <>
       <div
-        className={`MOUSE_POINTER w-12 h-12 z-[9999] max-[1100px]:hidden fixed select-none pointer-events-none rounded-full backdrop-invert bg-opacity-5 ${
+        className={`MOUSE_POINTER w-12 h-12 z-[9999] fixed max-lg:hidden select-none pointer-events-none rounded-full backdrop-invert bg-opacity-5 ${
           isOverClickable
             ? "rotate-180 transition-transform"
             : "rotate-0 transition-transform"
@@ -73,11 +73,10 @@ const MouseFollower = forwardRef(function MouseFollower({}, inputRef) {
           <span
             key={el.id}
             style={{
-              position: "fixed",
-              top: `${el.y - 21}px`, // Centering the 32x32 trail element
-              left: `${el.x - 21}px`, // Centering the 32x32 trail element
+              top: `${el.y - 21}px`,
+              left: `${el.x}px`,
             }}
-            className="w-8 h-8 bg-gray-400 select-none pointer-events-none rounded-full blur-sm animate-bgColor"
+            className="w-8 h-8 fixed bg-gray-400 select-none pointer-events-none rounded-full blur-sm animate-bgColor"
           ></span>
         ))}
       </div>
