@@ -16,13 +16,13 @@ import Preloader from "./Components/Preloader";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
+  // useEffect(() => {
+  //   document.body.style.overflow = "hidden";
 
-    return () => {
-      document.body.style.overflow = "visible";
-    };
-  }, []);
+  //   return () => {
+  //     document.body.style.overflow = "visible";
+  //   };
+  // }, []);
 
   const handlePreloaderFinish = () => {
     setIsLoading(false);
@@ -30,7 +30,7 @@ function App() {
   };
   return (
     <main className="relative">
-      <Preloader onFinish={handlePreloaderFinish} />
+      {/* <Preloader onFinish={handlePreloaderFinish} /> */}
       {/* <Nav /> */}
       <Home />
       <About />
