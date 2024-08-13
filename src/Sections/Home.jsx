@@ -41,7 +41,7 @@ const Home = () => {
   // );
   return (
     <section id="home" className="HOME w-full block">
-      <div className="lg:w-10/12 mx-auto hero-bg py-14  lg:min-h-auto">
+      <div className="lg:w-10/12 mx-auto hero-bg py-14 lg:min-h-screen">
         <div className="flex flex-col items-center gap-10 justify-center bg-clip-text bg-nav-pattern text-transparent ">
           <h2 className="font-lobster text-7xl md:text-8xl lg:text-[10rem] leading-none">
             Hell<span className="lg:hidden">o</span>

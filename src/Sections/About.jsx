@@ -1,4 +1,3 @@
-import Button from "../Components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
@@ -12,26 +11,43 @@ function About() {
   const container = useRef();
   const { contextSafe } = useGSAP({ scope: container });
   useGSAP(() => {
+    const mm = gsap.matchMedia();
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
         start: "top bottom",
         end: "bottom 50%",
         scrub: true,
+        once: true,
         // markers: true,
       },
     });
-    tl.fromTo(
-      profileImg.current,
-      {
-        y: 200,
-      },
-      {
-        y: -10,
-      }
-    )
-      .to(".ABOUT_ME_HEADING", { x: 400 }, "<")
-      .fromTo(".ABOUT_ME_TEXT", { y: 200 }, { y: -10 }, "<");
+    mm.add("(min-width:1024px)", () => {
+      tl.fromTo(
+        profileImg.current,
+        {
+          y: 200,
+        },
+        {
+          y: -10,
+        }
+      )
+        .to(".ABOUT_ME_HEADING", { x: 320 }, "<")
+        .fromTo(".ABOUT_ME_TEXT", { y: 200 }, { y: -10 }, "<");
+    });
+    mm.add("(max-width:1024px)", () => {
+      tl.fromTo(
+        profileImg.current,
+        {
+          y: 100,
+        },
+        {
+          y: -10,
+        }
+      )
+        .to(".ABOUT_ME_HEADING", { x: 100 }, "<")
+        .fromTo(".ABOUT_ME_TEXT", { y: 200 }, { y: -10 }, "<");
+    });
   });
 
   const handleRevealClick = contextSafe(() => {
@@ -47,18 +63,40 @@ function About() {
           {
             display: "flex",
             height: "auto",
-            duration: 1,
-            ease: "power3.in",
+            duration: 0.2,
+            ease: "bounce",
           }
-        );
+        )
+          .to(".IMG_DIV", { scale: 1, duration: 0.4, ease: "power4" }, "<0.001")
+
+          .to(
+            ".ABOUT_ME_TEXT",
+            {
+              scale: 1,
+              duration: 0.4,
+              ease: "power4",
+            },
+            "<0.001"
+          );
       } else {
         // Closing animation
 
-        tl.to(".CONTENT", {
-          height: 0,
-          duration: 0.5,
-          ease: "power3.in",
-        }).set(".CONTENT", { display: "none" });
+        tl.to(".IMG_DIV", { scale: 0, duration: 0.4, ease: "power4" })
+          .to(
+            ".ABOUT_ME_TEXT",
+            {
+              scale: 0,
+              duration: 0.4,
+              ease: "power4",
+            },
+            "<"
+          )
+          .to(".CONTENT", {
+            height: 0,
+            duration: 0.3,
+            ease: "power3.in",
+          })
+          .set(".CONTENT", { display: "none" });
       }
 
       return newState;
@@ -66,23 +104,23 @@ function About() {
   });
 
   return (
-    <section id="about" className="ABOUT block w-full bg-[#09090a] rounded-lg">
+    <section
+      id="about"
+      className="ABOUT block w-full bg-[#09090a] transition-colors duration-200 hover:bg-[#151516] rounded-lg"
+    >
       <div
-        className="lg:w-11/12 mx-auto flex flex-col items-center relative gap-7 bg-[#151516] my-12 py-4 rounded-3xl"
+        className="w-11/12 mx-auto flex flex-col items-center relative gap-7 transition-colors duration-200  bg-[#151516] hover:bg-[#09090a] lg:my-12 my-4 py-2 lg:py-4 rounded-3xl"
         ref={container}
         onClick={handleRevealClick}
       >
-        <div className="HEADING w-full flex items-center justify-center py-6">
-          <h2 className="ABOUT_ME_HEADING text- lg:text-8xl font-exo group hover:no-underline">
-            <span className="group-hover:underline underline-offset-8 decoration-wavy">
-              About
-            </span>{" "}
-            <span className="group-hover:underline underline-offset-8">me</span>
+        <div className="HEADING w-full flex items-center justify-center pr-2 py-6">
+          <h2 className="ABOUT_ME_HEADING text-3xl md:text-5xl lg:text-8xl font-exo">
+            About me
           </h2>
         </div>
 
-        <div className="CONTENT hidden h-0 w-full flex-col lg:flex-row gap-10 justify-center items-center px-4">
-          <div className="IMG_DIV w-1/2 bg-black rounded-lg">
+        <div className="CONTENT hidden relative w-full flex-col lg:flex-row gap-10 justify-center items-center px-4">
+          <div className="IMG_DIV scale-0 lg:w-1/2 bg-black rounded-lg">
             <img
               src="/src/assets/cat.jpg"
               alt="the cat"
@@ -90,8 +128,9 @@ function About() {
               ref={profileImg}
             />
           </div>
-          <div className="ABOUT_ME_TEXT flex w-1/2 items-center flex-col gap-8 justify-center text-center py-10 px-2 bg-black rounded-lg">
-            <div className="font-montserrat relative text-xl w-10/12 leading-normal text-right">
+
+          <div className="ABOUT_ME_TEXT scale-0 lg:w-1/2 text-center bg-black rounded-lg">
+            <div className="font-montserrat relative text-xl w-10/12 mx-auto py-8 md:py-14 lg:py-20 leading-normal text-right">
               I'm a{" "}
               <span
                 onMouseEnter={() => setMouseHover(true)}
@@ -117,7 +156,6 @@ function About() {
               . If you need assistance in bringing your dream website to life,
               I'm here to help – so go ahead, don't be shy! 😊
             </div>
-            <Button Text={"Contact"} />
           </div>
         </div>
       </div>

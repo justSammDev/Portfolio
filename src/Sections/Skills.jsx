@@ -4,7 +4,7 @@ import { skillBackEnd } from "../constants";
 const Skills = () => {
   return (
     <section id="skills" className="SKILLS w-full block">
-      <div className="   border-4 border-transparent rounded-lg bg-gradient-to-tr from-red-600 via-green-700 to-purple-950 bg-400% animate-bgAnimation bg-clip-border">
+      <div className="border-4 border-transparent rounded-lg bg-gradient-to-tr from-red-600 via-green-700 to-purple-950 bg-400% animate-bgAnimation bg-clip-border">
         <div className=" font-lobster text-3xl">Tech</div>
         <div className="flex flex-row bg-black rounded-lg items-stretch justify-around p-2">
           <ul className=" grid grid-cols-3 p-4 gap-2 items-center justify-center ">

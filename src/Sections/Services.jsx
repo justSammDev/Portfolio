@@ -1,7 +1,7 @@
 const Services = () => {
   return (
     <section id="services" className="SERVICES block w-full">
-      <p className="text-9xl ">
+      <p className="text-3xl">
         Content goes here. Parallax height grows with content height.
       </p>
     </section>
