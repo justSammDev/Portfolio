@@ -108,7 +108,7 @@ function About() {
         <div className="CONTENT hidden w-full flex-col lg:flex-row gap-10 justify-center items-center px-4">
           <div className="IMG_DIV scale-0 border-2 lg:w-1/2 bg-black rounded-lg">
             <img
-              src="/src/assets/cat.jpg"
+              src="/src/assets/images/cat.jpg"
               alt="the cat"
               className="-z-10 h-full w-full rounded-lg"
             />

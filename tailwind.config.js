@@ -10,9 +10,7 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
       },
       backgroundImage: {
-        "nav-pattern": "url('./src/assets/nav-bg.jpg')",
-        "hero-pattern": "url('./src/assets/hero-bg.jpg')",
-        "eye-background": "url('./src/assets/eye-bg.jpg')",
+        "nav-pattern": "url('./src/assets/images/nav-bg.jpg')",
       },
       backgroundSize: {
         "400%": "400%",

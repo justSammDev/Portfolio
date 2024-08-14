@@ -49,7 +49,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src="/src/assets/eyeImage.jpg"
+                  src="/src/assets/images/eyeImage.jpg"
                   alt="Eye"
                   className="w-full h-full object-cover rounded-full grayscale-[60%]"
                 />
@@ -68,7 +68,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src="/src/assets/eyeImage.jpg"
+                  src="/src/assets/images/eyeImage.jpg"
                   alt="Eye"
                   className="w-full h-full object-cover rounded-full grayscale-[80%]"
                 />
@@ -80,7 +80,7 @@ const Home = () => {
             A web developer based on{" "}
             <div
               className="inline-block relative"
-              data-image="/src/assets/kathmanduMap.jpg"
+              data-image="/src/assets/images/kathmanduMap.jpg"
               onMouseEnter={handleHoverStart}
               onMouseLeave={handleHoverEnd}
             >
