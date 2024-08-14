@@ -33,12 +33,6 @@ const Home = () => {
     setHoverImage({ ...hoverImage, visible: false });
   };
 
-  // useGSAP(
-  //   () => {
-  //     gsap.from(".EYELID", { height: 0 });
-  //   },
-  //   { scope: container }
-  // );
   return (
     <section id="home" className="HOME w-full block">
       <div className="lg:w-10/12 mx-auto hero-bg py-14 lg:min-h-screen">
@@ -57,7 +51,7 @@ const Home = () => {
                 <img
                   src="/src/assets/eyeImage.jpg"
                   alt="Eye"
-                  className="w-full h-full object-cover rounded-full grayscale"
+                  className="w-full h-full object-cover rounded-full grayscale-[60%]"
                 />
               </div>
             </div>
@@ -76,7 +70,7 @@ const Home = () => {
                 <img
                   src="/src/assets/eyeImage.jpg"
                   alt="Eye"
-                  className="w-full h-full object-cover rounded-full grayscale"
+                  className="w-full h-full object-cover rounded-full grayscale-[80%]"
                 />
               </div>
             </div>

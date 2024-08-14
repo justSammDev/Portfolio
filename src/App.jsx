@@ -2,26 +2,19 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Footer from "./Components/Footer";
 import MouseFollower from "./Components/MouseFollower";
-import {
-  Home,
-  Skills,
-  Services,
-  About,
-  Contact,
-  Portfolio,
-} from "./Sections/index";
+import { Home, Skills, About, Contact, Portfolio } from "./Sections/index";
 import Preloader from "./Components/Preloader";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   document.body.style.overflow = "hidden";
-
-  //   return () => {
-  //     document.body.style.overflow = "visible";
-  //   };
-  // }, []);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, []);
 
   const handlePreloaderFinish = () => {
     setIsLoading(false);
@@ -29,15 +22,14 @@ function App() {
   };
   return (
     <main className="relative">
-      {/* <Preloader onFinish={handlePreloaderFinish} /> */}
+      <Preloader onFinish={handlePreloaderFinish} />
       <Home />
       <About />
       <Portfolio />
-      <Services />
       <Skills />
       <Contact />
       <Footer />
-      <MouseFollower />
+      {!isLoading && <MouseFollower />}
     </main>
   );
 }

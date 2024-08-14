@@ -9,14 +9,12 @@ const MouseFollower = forwardRef(function MouseFollower({}, inputRef) {
     const handleMouseMove = (e) => {
       const x = e.clientX;
       const y = e.clientY;
-      setMousePosition({ x: x - 27, y: y - 27 });
+      setMousePosition({ x: x - 10, y: y - 10 });
 
       const newElement = {
         id: Date.now(),
-        x,
-        y,
-        // xPercent: Math.round((x * 100) / window.innerWidth),
-        // yPercent: Math.round((y * 100) / window.innerHeight),
+        x: x + 7,
+        y: y - 5,
       };
 
       setTrailElements((prevElements) => [...prevElements, newElement]);
@@ -29,12 +27,7 @@ const MouseFollower = forwardRef(function MouseFollower({}, inputRef) {
     };
 
     const handleMouseOver = (e) => {
-      if (
-        e.target.tagName === "A" ||
-        e.target.tagName === "BUTTON" ||
-        e.target.classList.contains("link") ||
-        e.target.onclick
-      ) {
+      if (e.target.classList.contains("link")) {
         setIsOverClickable(true);
       }
     };
@@ -57,10 +50,10 @@ const MouseFollower = forwardRef(function MouseFollower({}, inputRef) {
   return (
     <>
       <div
-        className={`MOUSE_POINTER w-12 h-12 z-[9999] fixed max-lg:hidden select-none pointer-events-none rounded-full backdrop-invert bg-opacity-5 ${
+        className={`MOUSE_POINTER z-[9999] fixed max-lg:hidden select-none pointer-events-none rounded-full backdrop-invert bg-opacity-5 ${
           isOverClickable
-            ? "rotate-180 transition-transform"
-            : "rotate-0 transition-transform"
+            ? "w-12 aspect-square transition-[width] duration-200"
+            : "w-5 aspect-square transition-[width] duration-100"
         }`}
         style={{
           left: mousePosition.x + "px",
@@ -68,18 +61,20 @@ const MouseFollower = forwardRef(function MouseFollower({}, inputRef) {
         }}
         ref={inputRef}
       ></div>
-      <div className="TRAIL">
-        {trailElements.map((el) => (
-          <span
-            key={el.id}
-            style={{
-              top: `${el.y - 21}px`,
-              left: `${el.x}px`,
-            }}
-            className="w-8 h-8 fixed bg-gray-400 select-none pointer-events-none rounded-full blur-sm animate-bgColor"
-          ></span>
-        ))}
-      </div>
+      {!isOverClickable && (
+        <div className="TRAIL">
+          {trailElements.map((el) => (
+            <span
+              key={el.id}
+              style={{
+                top: `${el.y}px`,
+                left: `${el.x}px`,
+              }}
+              className="w-2 h-2 fixed bg-gray-400 select-none pointer-events-none rounded-full blur-sm animate-bgColor"
+            ></span>
+          ))}
+        </div>
+      )}
     </>
   );
 });
