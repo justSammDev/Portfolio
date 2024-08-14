@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { catEye, kathmanduMap } from "../assets/images";
 
 const Home = () => {
   const container = useRef();
@@ -49,7 +48,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src="/src/assets/images/eyeImage.jpg"
+                  src={catEye}
                   alt="Eye"
                   className="w-full h-full object-cover rounded-full grayscale-[60%]"
                 />
@@ -68,7 +67,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src="/src/assets/images/eyeImage.jpg"
+                  src={catEye}
                   alt="Eye"
                   className="w-full h-full object-cover rounded-full grayscale-[80%]"
                 />
@@ -80,7 +79,7 @@ const Home = () => {
             A web developer based on{" "}
             <div
               className="inline-block relative"
-              data-image="/src/assets/images/kathmanduMap.jpg"
+              data-image={kathmanduMap}
               onMouseEnter={handleHoverStart}
               onMouseLeave={handleHoverEnd}
             >
