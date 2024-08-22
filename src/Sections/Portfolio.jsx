@@ -7,6 +7,7 @@ const Portfolio = () => {
   const portfolioContainer = useRef();
   const { contextSafe } = useGSAP({ scope: portfolioContainer });
   const [portfolioPopup, setPortfolioPopup] = useState(false);
+  const [cardHovers, setCardHovers] = useState([]);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -92,11 +93,19 @@ const Portfolio = () => {
         </div>
 
         <div className="CONTENT_PORTFOLIO hidden w-full px-4">
-          <div className="PROJECT_HOLDER flex items-center gap-4 px-2 md:px-5 lg:px-8 py-4 justify-center w-full flex-wrap">
-            {portfolioProjects.map((project) => (
+          <div className="PROJECT_HOLDER flex relative z-10 items-center gap-4 px-2 md:px-5 lg:px-8 py-4 justify-center w-full flex-wrap">
+            {portfolioProjects.map((project, index) => (
               <div
                 key={project.name}
-                className={`PROJECT_CARD border-2 rounded-3xl scale-0 bg-[#2d3032] lg:w-[20vw] h-[20vh] lg:h-[40vh] w-[30vw] md:w-[30vw] relative px-2 md:px-3 lg:px-6 flex-none max-w-[250px] hover:bg-[#989898]`}
+                className={`PROJECT_CARD border-2 rounded-3xl scale-0 bg-[#2d3032] lg:w-[20vw] h-[20vh] lg:h-[40vh] w-[30vw] md:w-[30vw] relative px-2 md:px-3 lg:px-6 z-20 flex-none max-w-[250px] ${
+                  cardHovers[index] ? "bg-[#989898]" : ""
+                }`}
+                onMouseEnter={() =>
+                  setCardHovers((prev) => ({ ...prev, [index]: true }))
+                }
+                onMouseLeave={() =>
+                  setCardHovers((prev) => ({ ...prev, [index]: false }))
+                }
               >
                 <a
                   className="w-full link h-full flex flex-col gap-2 lg:gap-10 items-center justify-center"
@@ -107,9 +116,25 @@ const Portfolio = () => {
                     <img
                       src={project.iconUrl}
                       alt="Project icon"
-                      className="w-full h-full object-contain link grayscale"
+                      className="w-full h-full object-contain link"
                     />
                   </div>
+                  {cardHovers[index] && (
+                    <div className="absolute -top-10 -left-10 w-64 aspect-square border bg-[#0c0c0d] text-white rounded-3xl z-30 p-3 link">
+                      <p className="link">{project.description}</p>
+                      <div className="w-full flex items-center justify-around link">
+                        {project.stack.map((tech) => (
+                          <div className="w-5 h-5 mt-10">
+                            <img
+                              src={tech}
+                              alt="Tech Stack"
+                              className="full h-full object-contain link"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   <p className="font-aclonica text-wrap text-center link">
                     {project.name}
                   </p>

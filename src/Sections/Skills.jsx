@@ -105,7 +105,7 @@ const Skills = () => {
                     src={skillfront.logo}
                     key={skillfront.placeholder}
                     placeholder={skillfront.name}
-                    className=" w-8 aspect-square link grayscale"
+                    className=" w-8 aspect-square link "
                   />
                   <p className=" font-exo text-white text-lg link">
                     {skillfront.name}
@@ -128,7 +128,7 @@ const Skills = () => {
                     src={skillback.logo}
                     key={skillback.name}
                     placeholder={skillback.name}
-                    className="w-8 aspect-square link grayscale"
+                    className="w-8 aspect-square link "
                   ></img>
                   <p className=" font-exo text-white text-lg link">
                     {skillback.name}
@@ -151,7 +151,7 @@ const Skills = () => {
                     src={skill.logo}
                     key={skill.placeholder}
                     placeholder={skill.name}
-                    className=" w-8 aspect-square link grayscale"
+                    className=" w-8 aspect-square link "
                   />
                   <p className=" font-exo text-white text-lg link">
                     {skill.name}

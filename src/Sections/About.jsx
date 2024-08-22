@@ -132,17 +132,16 @@ function About() {
               >
                 Not a cat
               </span>{" "}
-              with a passion for turning{" "}
-              <span className=" font-lobster text-2xl bg-gradient-to-r from-gray-400 via-gray-600 to-white to-80%  bg-clip-text text-transparent bg-400% animate-bgAnimation">
-                dreams{" "}
-              </span>
-              into{" "}
-              <span className="  font-aclonica bg-400% bg-gradient-to-r from-gray-400 via-gray-600 to-white bg-clip-text text-transparent animate-bgAnimation">
-                reality
-              </span>
-              . If you need assistance in bringing your dream website to life,
-              I'm here to help – so go ahead, don't be shy!{" "}
-              <span className="grayscale">😊</span>
+              with a passion for{" "}
+              <span className="text-blue-700">front-end</span> development. I am
+              primarily a <span className="text-blue-700">front-end</span>{" "}
+              developer but have worked on{" "}
+              <span className="text-red-600">back-end</span> as well as
+              full-stack. I work most with{" "}
+              <span className="text-[#5ed4f5]">react</span> and{" "}
+              <span className="text-[#e2441c]">HTML5</span> but can also work
+              with <span className="text-[#4e4e4e]">nextJS</span>. So if you are
+              in need of my skillset, shoot me an email.
             </div>
           </div>
         </div>
