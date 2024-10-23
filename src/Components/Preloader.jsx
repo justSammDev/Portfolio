@@ -22,7 +22,7 @@ const Preloader = ({ onFinish }) => {
 
       const interval = setInterval(
         update,
-        Math.floor(Math.random() * 200) + 50
+        Math.floor(Math.random() * 100) + 20
       );
     });
   };
@@ -32,14 +32,14 @@ const Preloader = ({ onFinish }) => {
       const tl = gsap.timeline();
       tl.from(".PRELOADER_BAR_TOP", {
         y: -500,
-        duration: 1,
+        duration: 0.7,
         ease: "bounce",
       })
         .from(
           ".PRELOADER_BAR_BOT",
           {
             y: 500,
-            duration: 1,
+            duration: 0.7,
             ease: "bounce",
           },
           "<"
@@ -56,7 +56,7 @@ const Preloader = ({ onFinish }) => {
                 ".PRELOADER_BAR_TOP",
                 {
                   y: -500,
-                  duration: 1,
+                  duration: 0.7,
                   ease: "bounce",
                 },
                 ">"
@@ -65,7 +65,7 @@ const Preloader = ({ onFinish }) => {
                 ".PRELOADER_BAR_BOT",
                 {
                   y: 500,
-                  duration: 1,
+                  duration: 0.7,
                   ease: "bounce",
                 },
                 "<"

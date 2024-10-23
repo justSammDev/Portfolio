@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { cat } from "../assets/images";
+import { cat, sam2 } from "../assets/images";
 gsap.registerPlugin(ScrollTrigger);
 
 function About() {
@@ -109,8 +109,8 @@ function About() {
         <div className="CONTENT hidden w-full flex-col lg:flex-row gap-10 justify-center items-center px-4">
           <div className="IMG_DIV scale-0 border-2 lg:w-1/2 bg-black rounded-lg">
             <img
-              src={cat}
-              alt="the cat"
+              src={sam2}
+              alt="the sam"
               className="-z-10 h-full w-full rounded-lg"
             />
           </div>
