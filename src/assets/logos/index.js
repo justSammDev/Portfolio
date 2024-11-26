@@ -11,6 +11,7 @@ import mongo from "./mongoLogo.png";
 import mongoose from "./mongoose.png";
 import github from "./github.svg";
 import redux from "./redux.svg";
+import next from "./nextLogo.png";
 
 export {
   html,
@@ -26,4 +27,5 @@ export {
   mongoose,
   github,
   redux,
+  next,
 };

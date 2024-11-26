@@ -22,6 +22,7 @@ import {
   mongoose,
   github,
   redux,
+  next,
 } from "./assets/logos";
 
 export const navLinks = {
@@ -157,17 +158,7 @@ export const portfolioProjects = [
     name: "Event Sharing App",
     description:
       "Built a web app for creating and sharing events as well as event tickets. Implemented stripe for realtime sale and purchase of tickets to events.",
-    stack: [
-      html,
-      css,
-      tailwind,
-      react,
-      javascript,
-      mongoose,
-      express,
-      node,
-      mongo,
-    ],
+    stack: [html, css, tailwind, react, typescript, next],
     link: "https://eventify-nine.vercel.app/",
     github: "https://github.com/justSammDev/eventify",
   },
